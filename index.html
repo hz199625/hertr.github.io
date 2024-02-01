@@ -22,17 +22,15 @@
         <div class="col-md-12" role="main">
             <div class="bs-example">
                 <div class="col-md-2 col-sm-3 col-xs-4" id="icon">
-                    <img src="icon.png" onerror="javascript:this.src='images/no_img.png'">
+                    <img src="images/default.jpg" onerror="javascript:this.src='images/no_img.png'">
                 </div>
                 <div class="col-md-8 col-sm-9 col-xs-8">
                     <div class="name">
                         <img id='appType' src="images/ios.png" />
-                        <h2>yolozb</h2>
+                        <h2>Yolozb</h2>
                     </div>
                     <div class="name">
-
                         <button type="button" class="btn btn-primary download-btn" onclick="download()">  <i class="icon iconfont "></i> <span>下载安装</span></button>
-
                     </div>
                 </div>
 
@@ -47,7 +45,8 @@
                         <strong>4.9</strong>
                         <img src="images/star.png">
                     </p>
-                    <span>67868个评分</span>
+                    <span>67868个评分</sp
+					an>
                 </div>
                 <div class="col-xs-3 text-right">
                     <p><strong>4+</strong></p>
@@ -56,12 +55,6 @@
             </div>
 
             <div class="bs-example mt-xs-30 description">
-                <div class="col-xs-12">
-                    <h2>简介</h2>
-                    <p>这是应用简介</p>
-                    <a href="itms-services://?action=download-manifest&url=https://test.yozb.love/upload/ios/demo.plist">下载下载兄弟</a>
-                    <hr>
-                </div>
             </div>
 
             <div class="bs-example comment-info">
@@ -112,20 +105,6 @@
                 </div>
             </div>
 
-            <div class="bs-example description">
-                <div class="col-xs-12">
-                    <h2>新功能</h2>
-                    <hr>
-                </div>
-            </div>
-
-            <div class="bs-example description">
-                <div class="col-xs-12">
-                    <h2>版本</h2>
-                    <p>1.0.0 (Build 1)</p>
-                    <hr>
-                </div>
-            </div>
 
 
             <div class="bs-example description">
@@ -134,11 +113,7 @@
                     <ul>
                         <li>
                             <span>经销商</span>
-                            <div class="text-right">这是你的应用名称</div>
-                        </li>
-                        <li>
-                            <span>文件大小</span>
-                            <div class="text-right">30.2M</div>
+                            <div class="text-right">yolozb</div>
                         </li>
                         <li>
                             <span>兼容性</span>
@@ -172,8 +147,8 @@
 <script>
 
     var appUrls = {
-        ios: 'https://github.com/hz199625/hertr.github.io/blob/main/demo.plist',   //ios plist文件 当前域名站点 例如 https://www.test.com/demo.plist
-        android: 'https://www.test.com/demo.apk',  //如果没有 则不填
+        ios: 'https://qiniu.app.yozb.love/app/demo.plist',   //ios plist文件 当前域名站点 例如 https://www.test.com/demo.plist
+        android: 'http://qiniu.yozb.love/app/yolozb_app_v1.8.9_release_2402011045.apk',  //如果没有 则不填
     }
 
     var ua = navigator.userAgent.toLowerCase(),
@@ -217,20 +192,23 @@
 
     download = function () {
         if(device == 'android'){
+			print("w w w w ww ");
             if(appUrls.android){
                 location.href = appUrls.android;
             }else{
                 alert('没有安卓分发');
             }
         }else if(device == 'iOS'){
+			print("w66666 ");
             if(appUrls.ios){
                 //itms-services://?action=download-manifest&url=
-                location.href ='itms-services://?action=download-manifest&url=https://qiniu.app.yozb.love/demo.plist';
-               // alert('itms-services://?action=download-manifest&url='+appUrls.ios);
+                location.href ="itms-services://?action=download-manifest&url="+appUrls.ios;
             }else{
                 alert('没有IOS分发');
             }
-        }
+        }else{
+			alert('没有');
+		}
     }
 
 
